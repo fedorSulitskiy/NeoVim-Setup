@@ -21,7 +21,5 @@ return {
 				null_ls.builtins.completion.spell,
 			},
 		})
-
-		vim.keymap.set("n", "<S-A-f>", vim.lsp.buf.format, {})
 	end,
 }

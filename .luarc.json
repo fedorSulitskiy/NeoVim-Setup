@@ -1,5 +1,12 @@
 {
     "diagnostics.globals": [
-        "vim"
+        "vim",
+        "Snacks",
+        "¦®",
+        "Unit"
+    ],
+    "runtime.unicodeName": true,
+    "diagnostics.disable": [
+        "doc-field-no-class"
     ]
 }

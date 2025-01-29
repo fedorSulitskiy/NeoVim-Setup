@@ -1,40 +1,48 @@
 return {
-    -- VS CODE DARK MODERN
-	{
-		"gmr458/vscode_modern_theme.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("vscode_modern").setup({
-				cursorline = true,
-				transparent_background = false,
-				nvim_tree_darker = true,
-			})
-			vim.cmd.colorscheme("vscode_modern")
-		end,
-	},
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        config = function()
+            vim.cmd([[colorscheme tokyonight]])
+        end,
+    }, -- VS CODE DARK MODERN
+    -- {
+    --     "gmr458/vscode_modern_theme.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         require("vscode_modern").setup({
+    --             cursorline = true,
+    --             transparent_background = false,
+    --             nvim_tree_darker = true,
+    --         })
+    --         vim.cmd.colorscheme("vscode_modern")
+    --     end,
+    -- },
     -- CATPPUCCIN
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	name = "catppuccin",
-	-- 	priority = 2000,
-	-- 	config = function()
-	-- 		-- Theme
-	-- 		require("catppuccin").setup({
-	-- 			flavour = "mocha",
-	-- 			integrations = {
-	-- 				cmp = true,
-	-- 				gitsigns = true,
-	-- 				nvimtree = true,
-	-- 				treesitter = true,
-	-- 				notify = false,
-	-- 				mini = {
-	-- 					enabled = true,
-	-- 					indentscope_color = "",
-	-- 				},
-	-- 			},
-	-- 		})
-	-- 		vim.cmd.colorscheme("catppuccin")
-	-- 	end,
-	-- },
+    -- {
+    -- 	"catppuccin/nvim",
+    -- 	name = "catppuccin",
+    -- 	priority = 2000,
+    -- 	config = function()
+    -- 		-- Theme
+    -- 		require("catppuccin").setup({
+    -- 			flavour = "mocha",
+    -- 			integrations = {
+    -- 				cmp = true,
+    -- 				gitsigns = true,
+    -- 				nvimtree = true,
+    -- 				treesitter = true,
+    -- 				notify = false,
+    -- 				mini = {
+    -- 					enabled = true,
+    -- 					indentscope_color = "",
+    -- 				},
+    -- 			},
+    -- 		})
+    -- 		vim.cmd.colorscheme("catppuccin")
+    -- 	end,
+    -- },
 }

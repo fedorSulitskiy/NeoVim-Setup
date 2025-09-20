@@ -8,6 +8,7 @@ return {
 				"go",
 				"python",
 				"c",
+                "nix",
 				"lua",
 				"vim",
 				"vimdoc",

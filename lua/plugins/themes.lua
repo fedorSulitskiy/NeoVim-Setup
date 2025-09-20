@@ -1,13 +1,14 @@
 return {
-    -- {
-    --     "folke/tokyonight.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     opts = {},
-    --     config = function()
-    --         vim.cmd([[colorscheme tokyonight]])
-    --     end,
-    -- }, -- VS CODE DARK MODERN
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        config = function()
+            vim.cmd([[colorscheme tokyonight]])
+        end,
+    },
+    -- VS CODE DARK MODERN
     {
         "gmr458/vscode_modern_theme.nvim",
         lazy = false,
@@ -22,27 +23,27 @@ return {
         end,
     },
     -- CATPPUCCIN
-    -- {
-    -- 	"catppuccin/nvim",
-    -- 	name = "catppuccin",
-    -- 	priority = 2000,
-    -- 	config = function()
-    -- 		-- Theme
-    -- 		require("catppuccin").setup({
-    -- 			flavour = "mocha",
-    -- 			integrations = {
-    -- 				cmp = true,
-    -- 				gitsigns = true,
-    -- 				nvimtree = true,
-    -- 				treesitter = true,
-    -- 				notify = false,
-    -- 				mini = {
-    -- 					enabled = true,
-    -- 					indentscope_color = "",
-    -- 				},
-    -- 			},
-    -- 		})
-    -- 		vim.cmd.colorscheme("catppuccin")
-    -- 	end,
-    -- },
+    {
+    	"catppuccin/nvim",
+    	name = "catppuccin",
+    	priority = 2000,
+    	config = function()
+    		-- Theme
+    		require("catppuccin").setup({
+    			flavour = "mocha",
+    			integrations = {
+    				cmp = true,
+    				gitsigns = true,
+    				nvimtree = true,
+    				treesitter = true,
+    				notify = false,
+    				mini = {
+    					enabled = true,
+    					indentscope_color = "",
+    				},
+    			},
+    		})
+    		vim.cmd.colorscheme("catppuccin")
+    	end,
+    },
 }

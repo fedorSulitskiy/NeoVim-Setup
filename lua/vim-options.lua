@@ -12,3 +12,15 @@ vim.g.mapleader = " "
 
 -- Line Numbers
 vim.opt.relativenumber = true
+
+-- Diagnostics
+vim.o.updatetime = 250
+vim.diagnostic.config({
+	virtual_text = false,
+	float = { source = "always" },
+})
+vim.api.nvim_create_autocmd("CursorHold", {
+	callback = function()
+		vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
+	end,
+})

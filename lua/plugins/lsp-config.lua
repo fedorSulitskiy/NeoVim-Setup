@@ -4,26 +4,30 @@ return {
 	{ "williamboman/mason-lspconfig.nvim", enabled = false },
 	{ "WhoIsSethDaniel/mason-tool-installer.nvim", enabled = false },
 
-	-- 2. Replace LazyVim’s lsp/init.lua with our own minimal config
+	-- 2. Minimal lspconfig setup
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = { "hrsh7th/cmp-nvim-lsp" },
-		config = function()
+		opts = {
+			diagnostics = {
+				virtual_text = true,
+				signs = true,
+				underline = true,
+			},
+		},
+		config = function(_, opts)
+			-- apply diagnostic look-and-feel
+			vim.diagnostic.config(opts.diagnostics)
+
 			local lspconfig = require("lspconfig")
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-			-- capabilities for completion
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 
-			-- list of system-installed servers
-			local servers = {
-				lua_ls = {},
-				gopls = {},
-			}
+			local servers = { lua_ls = {}, gopls = {} }
 
-			for name, opts in pairs(servers) do
-				opts.capabilities = capabilities
-				lspconfig[name].setup(opts)
+			for name, server_opts in pairs(servers) do
+				server_opts.capabilities = capabilities
+				lspconfig[name].setup(server_opts)
 			end
 		end,
 	},

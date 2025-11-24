@@ -23,7 +23,16 @@ return {
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 
-			local servers = { lua_ls = {}, gopls = {} }
+			local nixdSetup = {
+				nixpkgs = {
+					expr = "import <nixpkgs> { }",
+				},
+				formatting = {
+					command = { "nixfmt" }, -- or nixfmt or nixpkgs-fmt
+				},
+			}
+
+			local servers = { lua_ls = {}, gopls = {}, nixd = nixdSetup }
 
 			for name, server_opts in pairs(servers) do
 				server_opts.capabilities = capabilities

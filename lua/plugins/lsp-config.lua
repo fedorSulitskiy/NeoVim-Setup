@@ -55,7 +55,7 @@ return {
 
 	-- 3. null-ls for go
 	{
-		"jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		ft = "go",
 		config = function()
 			local null_ls = require("null-ls")
@@ -65,7 +65,6 @@ return {
 				sources = {
 					null_ls.builtins.formatting.gofumpt,
 					null_ls.builtins.formatting.goimports_reviser,
-					null_ls.builtins.formatting.golines,
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then

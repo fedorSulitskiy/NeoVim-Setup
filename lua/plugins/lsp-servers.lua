@@ -28,7 +28,17 @@ return {
 				},
 			})
 
-			vim.lsp.config("nixd", { capabilities = capabilities })
+			vim.lsp.config("nixd", { 
+				capabilities = capabilities,
+				settings = {
+					nixpkgs = {
+						expr = "import <nixpkgs> { }",
+					},
+					formatting = {
+						command = { "nixfmt" },
+					},
+				},
+			})
 
 			-- 2. enable them
 			vim.lsp.enable({ "lua_ls", "gopls", "pyright", "nixd" })

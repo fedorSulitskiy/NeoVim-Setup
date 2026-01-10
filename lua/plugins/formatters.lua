@@ -11,12 +11,12 @@ return {
 				},
 
 				-- Go
-				gofmt = {
-					command = "gofmt",
-					stdin = true,
-				},
 				goimports = {
 					command = "goimports",
+					stdin = true,
+				},
+				gofumpt = {
+					command = "gofumpt",
 					stdin = true,
 				},
 
@@ -42,7 +42,7 @@ return {
 
 			formatters_by_ft = {
 				lua = { "stylua" },
-				go = { "gofmt", "goimports" },
+				go = { "goimports", "gofumpt" },
 				python = { "black", "isort" },
 				nix = { "alejandra" },
 			},

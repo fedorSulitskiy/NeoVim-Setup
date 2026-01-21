@@ -19,6 +19,11 @@ return {
 					command = "gofumpt",
 					stdin = true,
 				},
+				swag = {
+					command = "swag",
+					args = { "fmt", "-d", "." },
+					stdin = false,
+				},
 
 				-- Python
 				black = {
@@ -42,7 +47,7 @@ return {
 
 			formatters_by_ft = {
 				lua = { "stylua" },
-				go = { "goimports", "gofumpt" },
+				go = { "goimports", "gofumpt", "swag" },
 				python = { "black", "isort" },
 				nix = { "alejandra" },
 			},

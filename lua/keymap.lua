@@ -8,3 +8,8 @@ vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
 
 -- NeoTree
 vim.keymap.set("n", "<C-b>", ":Neotree filesystem reveal left<CR>", {})
+
+-- Render Markdown toggle
+vim.keymap.set("n", "<leader>mr", function()
+	require('render-markdown').toggle()
+end, { desc = "Toggle Rendered Markdown" })

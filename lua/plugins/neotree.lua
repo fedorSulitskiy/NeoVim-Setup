@@ -16,5 +16,14 @@ return {
             "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
         },
+        opts = {
+            filesystem = {
+                filters = {
+                    show_hidden = true,    -- show dotfiles
+                    show_ignored = true,   -- show stuff in .gitignore
+                    hide_dotfiles = false, -- keep them visible when toggling
+                },
+            },
+        },
     },
 }
